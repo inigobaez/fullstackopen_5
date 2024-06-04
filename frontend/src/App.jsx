@@ -43,7 +43,7 @@ const App = () => {
       window.localStorage.setItem('loggedBlogappUser', JSON.stringify(loggedUser))
       blogService.setToken(loggedUser.token)
       setUser(loggedUser)
-      handleNotification({ message: 'user logged in', type: 'success' })
+      handleNotification({ message: 'user successfully logged in', type: 'success' })
     } catch (error) {
       handleNotification({ message: 'wrong username or password', type: 'error' })
       console.log(error)
@@ -63,7 +63,7 @@ const App = () => {
   }
   const handleNotification = (message) => {
     setNotification(message)
-    setTimeout(() => setNotification(null), 1500)
+    setTimeout(() => setNotification(null), 2000)
   }
   const createBlog = async (newBlog) => {
 

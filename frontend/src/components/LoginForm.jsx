@@ -12,15 +12,15 @@ const LoginForm = ({ login }) => {
   }
   return <>
 
-    <form onSubmit={handleLogin}>
+    <form data-testid='loginForm' onSubmit={handleLogin}>
       <span>loginform</span>
       <div>
         <label htmlFor='username'>Username</label>
-        <input type='text' name='username' value={username} onChange={({ target }) => setUsername(target.value)} />
+        <input data-testid='username' type='text' name='username' value={username} onChange={({ target }) => setUsername(target.value)} />
       </div>
       <div>
         <label htmlFor='password'>Password</label>
-        <input type='password' name='password' value={password} onChange={({ target }) => setPassword(target.value)} />
+        <input data-testid='password' type='password' name='password' value={password} onChange={({ target }) => setPassword(target.value)} />
       </div>
       <button type='submit'>Login</button>
     </form>
