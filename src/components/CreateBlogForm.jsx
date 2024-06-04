@@ -17,15 +17,15 @@ const CreateBlogForm = ({ createBlog }) => {
     <form onSubmit={handleCreateBlog}>
       <div>
         <label htmlFor='title'>Title</label>
-        <input type='text' name='title' value={title} onChange={({ target }) => setTitle(target.value)} />
+        <input id='title' type='text' name='title' value={title} onChange={({ target }) => setTitle(target.value)} />
       </div>
       <div>
         <label htmlFor='author'>Author</label>
-        <input type='text' name='author' value={author} onChange={({ target }) => setAuthor(target.value)} />
+        <input id='author' type='text' name='author' value={author} onChange={({ target }) => setAuthor(target.value)} />
       </div>
       <div>
         <label htmlFor='url'>Url</label>
-        <input type='text' name='url' value={url} onChange={({ target }) => setUrl(target.value)} />
+        <input id='url' type='text' name='url' value={url} onChange={({ target }) => setUrl(target.value)} />
       </div>
       <button type='submit'>Create</button>
 

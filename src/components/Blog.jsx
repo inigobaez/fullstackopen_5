@@ -18,15 +18,16 @@ const Blog = ({ blog, updateBlog, deleteBlog, user }) => {
   //console.log('blog details', blog, blog.user.username, user.username)
   return (
     <div style={blogStyle}>
-      {blog.title}
-      <button onClick={() => setDetailsVisible((prevState) => !prevState)}>
-        {detailsVisible ? 'hide' : 'show'}
-      </button>
+      <div className='blog_header'>{blog.title} {blog.author}
+        <button onClick={() => setDetailsVisible((prevState) => !prevState)}>
+          {detailsVisible ? 'hide' : 'show'}
+        </button>
+      </div>
       {detailsVisible &&
-        <div>
+        <div className='blog_body'>
           <p>{blog.url}</p>
           <p>{blog.likes} <button onClick={handleLike}>like</button></p>
-          <p>{blog.author}</p>
+          <p>{blog.user.name}</p>
           {blog.user.username === user.username &&
             <button onClick={() => deleteBlog(blog)}>Remove
             </button>}
