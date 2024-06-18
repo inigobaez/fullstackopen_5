@@ -69,6 +69,7 @@ const App = () => {
 
     try {
       const createdBlog = await blogService.create(newBlog)
+      console.log('createdBlog', createdBlog)
       blogFormRef.current.toggle()
       //console.log('createdBlog', createdBlog)
       setBlogs(prevState => [...prevState, createdBlog])
@@ -99,7 +100,7 @@ const App = () => {
         handleNotification({ message: `Blog ${blog.title} deleted`, type: 'success' })
       }
     } catch (error) {
-      handleNotification({ message: `Blog ${error} could not be updated`, type: 'error' })
+      handleNotification({ message: `Blog ${error} could not be deleted`, type: 'error' })
     }
   }
   const toggleBlogForm = () => {
